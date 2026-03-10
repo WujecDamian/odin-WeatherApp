@@ -6,29 +6,27 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>weather app</h1>
-    <input type="text" name="weather-city" id="weather-city" class="city" />
-    <button class="search__button">Search</button>
-    <button class="unit__toggle">C/F</button>
+    <nav>
+      <h1>weather app</h1>
+      <section class="nav__wrap">
+        <input type="text" name="weather-city" id="weather-city" class="city" />
+        <button class="search__button">Search</button>
+      </section>
+      <button class="unit__toggle">C/F</button>
+    </nav>
     <main>
       <section class="weather__card--big">
-        <section class="weather__info--left">
-          <img
-            src="./assets/icons/clear-day.svg"
-            alt="icon of weather"
-            class="weather__icon"
-            width="50px"
-          />
-          <h2 class="">Location: <span class="weather__city-name"></span></h2>
-          <h4 class="">‎ <span class="weather__description"></span></h4>
-        </section>
-        <section class="weather__info--right">
-          <p class="">
-            Temperature: <span class="weather__temperature"></span>
-          </p>
-          <p class="">Feels like: <span class="weather__feelslike"></span></p>
-          <p class="">Sunset at: <span class="weather__sunset"></span></p>
-        </section>
+        <img
+          src="./assets/icons/unknown.svg"
+          alt="icon of weather"
+          class="weather__icon"
+          width="50px"
+        />
+        <h2 class=""><span class="weather__city-name"></span></h2>
+        <span class="weather__temperature"></span>
+        <h4 class="">‎ <span class="weather__description"></span></h4>
+        <p class="">Feels like: <span class="weather__feelslike"></span></p>
+        <p class="">Sunset at: <span class="weather__sunset"></span></p>
         <p class=""><span class="weather__forecast--description"></span></p>
         <section class="weather__cards--small"></section>
       </section>
