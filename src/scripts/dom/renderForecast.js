@@ -18,6 +18,11 @@ export function renderForecast (
   let feelsLike = document.querySelector('.weather__feelslike')
   let sunset = document.querySelector('.weather__sunset')
   cardsWrapper.replaceChildren()
+  /* update temperature if celsius is set */
+  if (currentUnit === 'C') {
+    weatherTemp = ((weatherTemp - 32) / 1.8).toFixed(1)
+    weatherTempFeelsLike = ((weatherTempFeelsLike - 32) / 1.8).toFixed(1)
+  }
   /* update dom */
 
   city.innerText = weatherCity
@@ -49,10 +54,19 @@ function createCard (day) {
   let tempMaxElement = document.createElement('p')
   let tempElement = document.createElement('p')
   let tempMinElement = document.createElement('p')
+  let tempMax = day.tempmax
+  let temp = day.temp
+  let tempMin = day.tempmin
+  if (currentUnit === 'C') {
+    tempMax = ((tempMax - 32) / 1.8).toFixed(1)
+    temp = ((temp - 32) / 1.8).toFixed(1)
+    tempMin = ((temp - 32) / 1.8).toFixed(1)
+  }
   dateElement.innerText = day.datetime.slice(5)
-  tempMaxElement.innerText = day.tempmax
-  tempElement.innerText = day.temp
-  tempMinElement.innerText = day.tempmin
+  tempMaxElement.innerText = tempElement.innerText = tempMax
+  tempElement.innerText = tempElement.innerText = temp
+
+  tempMinElement.innerText = tempMin
   cardElementWrapper.append(
     dateElement,
     tempMaxElement,
