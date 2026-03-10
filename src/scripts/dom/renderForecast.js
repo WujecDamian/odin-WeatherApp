@@ -19,7 +19,7 @@ export function renderForecast (
   let sunset = document.querySelector('.weather__sunset')
   cardsWrapper.replaceChildren()
   /* update temperature if celsius is set */
-  if (currentUnit === 'C') {
+  if (currentUnit === 'C' ) {
     weatherTemp = ((weatherTemp - 32) / 1.8).toFixed(1)
     weatherTempFeelsLike = ((weatherTempFeelsLike - 32) / 1.8).toFixed(1)
   }

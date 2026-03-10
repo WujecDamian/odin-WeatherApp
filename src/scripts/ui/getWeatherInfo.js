@@ -6,6 +6,7 @@ import { currentWeather } from './currentWeather.js'
 // Only use it inside functions / after search has run
 
 export function updateWeatherInfo () {
+  if(currentWeather){
   let weatherCity = currentWeather.resolvedAddress
   let weatherDesc = currentWeather.currentConditions.conditions
   let weatherTemp = currentWeather.currentConditions.temp
@@ -24,4 +25,5 @@ export function updateWeatherInfo () {
     weatherTempFeelsLike,
     weatherIcon
   )
+}
 }
