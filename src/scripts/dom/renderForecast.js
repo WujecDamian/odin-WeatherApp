@@ -50,6 +50,7 @@ async function updateIcon (condition) {
 const cardsWrapper = document.querySelector('.weather__cards--small')
 function createCard (day) {
   let cardElementWrapper = document.createElement('div')
+  cardElementWrapper.className='weather__card--small'
   let dateElement = document.createElement('p')
   let tempMaxElement = document.createElement('p')
   let tempElement = document.createElement('p')
@@ -63,10 +64,10 @@ function createCard (day) {
     tempMin = ((temp - 32) / 1.8).toFixed(1)
   }
   dateElement.innerText = day.datetime.slice(5)
-  tempMaxElement.innerText = tempElement.innerText = tempMax
+  tempMaxElement.innerText = tempElement.innerText = `H: ${tempMax}`
   tempElement.innerText = tempElement.innerText = temp
 
-  tempMinElement.innerText = tempMin
+  tempMinElement.innerText = `L: ${tempMin}`
   cardElementWrapper.append(
     dateElement,
     tempMaxElement,
